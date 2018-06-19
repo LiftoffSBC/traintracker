@@ -27,23 +27,21 @@ $("#add-train-btn").on("click", function (event) {
   var trainName = $("#train-name-input").val().trim();
   var trainDestination = $("#destination-input").val().trim();
   var trainFrequency = $("#frequency-input").val().trim();
-  var nextArrival = moment($("#start-input").val().trim(), "DD/MM/YY").format("X");
-  var minutesAway = $("#rate-input").val().trim();
+  // var nextArrival = moment($("#arrival-input").val().trim(), "DD/MM/YY").format("X");
+  // var minutesAway = $("#rate-input").val().trim();
 
   // Creates local "temporary" object for holding train data
   var newTrain = {
     name: trainName,
     destination: trainDestination,
     frequency: trainFrequency,
-    arrival: nextArrival,
+    arrival: nextTrain,
     minutes: minutesAway
   };
 
   // Uploads train data to the database
   database.ref().push(newTrain);
-  database.ref().set({
-    name: "name"
-  })
+  
   // Logs everything to console
   console.log(newTrain.name);
   console.log(newTrain.destination);
