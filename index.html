@@ -27,7 +27,7 @@
   <div class="container">
     
         <!-- Jumbotron -->
-        <div class="jumbotron" style="background-color: black; color: white">
+        <div class="jumbotron" id='jtron'>
           <h1 class="text-center">Train Tracker</h1>
           <h3 class="text-center">Train Schedule for La La Land</h3>
         </div>
@@ -39,7 +39,7 @@
             <!-- Current Train-->
             <div class="card card-primary">
               <div class="card-heading">
-                <h3 class="card-title"><strong>Current Train Schedule</strong></h3>
+                <h3 class="card-title" id='table-head'><strong>Current Train Schedule</strong></h3>
               </div>
               <div class="card-body">
                 <table class="table table-hover" id='train-table'>
@@ -62,30 +62,30 @@
           <!-- Add Train  -->
           <div class="card card-primary">
             <div class="card-heading">
-              <h3 class="card-title"><strong>Add Train</strong></h3>
+              <h3 class="card-title" id='add-train'><strong>Add Train</strong></h3>
             </div>
             <div class="card-body">
               
               <!-- Entry Form -->
               <form>
                 <div class="form-group row">
-                  <label for="train-name-input">Train Name</label>
+                  <label for="train-name-input" id= 'tname'>Train Name</label>
                   <input class="form-control" id="train-name-input" type="text">
                 </div>
                 <div class="form-group row">
-                  <label for="first-input">First Train Time</label>
+                  <label for="first-input" id='ftrain'>First Train Time</label>
                   <input class="form-control" id="first-input" type="text">
                 </div>
                 <div class="form-group row">
-                  <label for="destination-input">Destination</label>
+                  <label for="destination-input" id='dtrain'>Destination</label>
                   <input class="form-control" id="destination-input" type="text">
                 </div>
                 <div class="form-group row">
-                  <label for="frequency-input">Frequency</label>
+                  <label for="frequency-input" id='freq'>Frequency</label>
                   <input class="form-control" id="frequency-input" type="text">
                 </div>
               
-                <button class="btn btn-primary" id="add-train-btn" type="submit">Submit</button>
+                <button class="btn btn-primary btn-lg" id="add-train-btn" type="submit">Submit</button>
               </form>
               
             </div>

@@ -64,24 +64,24 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
   var trainName = childSnapshot.val().name;
   var trainDestination = childSnapshot.val().destination;
   var trainFrequency = childSnapshot.val().frequency;
-  var nextArrival = childSnapshot.val().arrival;
-  var minutesAway = childSnapshot.val().minutes;
+  var nextArrival = childSnapshot.val().first;
+  
 
   // train Info
   console.log(trainName);
   console.log(trainDestination);
   console.log(trainFrequency);
   console.log(nextArrival);
-  console.log(minutesAway);
+  
 
   // Prettify the train start -** creates new timestamp**
-  var empStartPretty = moment.unix(empStart).format("MM/DD/YY");
+ // var empStartPretty = moment.unix(empStart).format("MM/DD/YY");
 
   // Assumptions
   var tFrequency = trainFrequency;
 
   // Time is 3:30 AM
-  var firstTime = "#first-input";
+  var firstTime = nextArrival;
 
   // First Time (pushed back 1 year to make sure it comes before current time)
   var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
@@ -104,11 +104,12 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
   console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
   // Next Train
-  var nextArrival = moment().add(tMinutesTillTrain, "minutes");
-  console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
-
+  var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+  var prettyNextTrain = moment.unix(nextTrain).format("hh:mm")
+  console.log("ARRIVAL TIME: " + moment.unix(nextTrain).format("hh:mm"));
+  // console.log moment.unix(empStart).format("MM/DD/YY")
   // Add each train's data into the table
   $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" +
-    trainFrequency + "</td><td>" + nextArrival + "</td><td>" + tMinutesTillTrain + "</td><td>");
+    trainFrequency + "</td><td>" + prettyNextTrain + "</td><td>" + tMinutesTillTrain + "</td><td>");
 });
 

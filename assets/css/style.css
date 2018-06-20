@@ -1,5 +1,37 @@
 body {
-    background-color: rgba(152, 247, 242, 0.87)
+    background-image: url("photos/mike-enerio-87665-unsplash.jpg");
+    
+ }
+ #jtron {
+    background-color: rgba(0, 0, 0, 0.63);
+    text-align: center;
+    font-weight:bold;
+    font-size: 30px;  
+    color: rgba(255, 255, 255, 0.897);
+ }
+#table-head, #add-train {
+    background-color: rgba(0, 0, 0, 0.63);
+    text-align: center;
+    font-weight:bold;
+    font-size: 25px;  
+    color: rgba(255, 255, 255, 0.897);
+ }
+ #ftrain, #freq, #dtrain, #tname {
+    background-color: rgba(0, 0, 0, 0.63);
+    text-align: center;
+    font-weight:bold;
+    font-size: 20px;  
+    color: rgba(255, 255, 255, 0.897);
+ }
 
+ #train-table, #destination-input, #frequency-input, #train-name-input, #form-group, #first-input {
+    background-color: rgba(236, 226, 213, 0.671);
+    text-align: center;
+    font-weight:bold;
+    font-size: 20px;
 }
 
+#add-train-btn {
+    background-color: rgba(0, 0, 0, 0.63);
+    border: whitesmoke;
+}
